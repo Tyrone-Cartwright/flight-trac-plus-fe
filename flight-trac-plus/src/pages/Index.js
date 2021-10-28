@@ -1,11 +1,41 @@
-import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const index = () => {
+const Index = (props) => {
+  const [flightForm, setFlightForm] = useState(getNewFlight());
+
+  // handleChange for new flight form
+  const handleChange = (evt) => {
+    setFlightForm((prevState) => ({
+      ...prevState,
+      [evt.target.name]: evt.target.value,
+    }));
+  };
+
+  // handleSubmit for new flight form
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    props.createFlight(flightForm);
+    setFlightForm(getNewFlight());
+  };
+
+  function getNewFlight() {
+    return {
+      departure: '',
+      arrival: '',
+      adults: '',
+      children: '',
+      infants: '',
+      tripType: '',
+      class: '',
+      time: '',
+    };
+  }
   return (
-    <div>
+    <section>
       <h1>Index</h1>
-    </div>
+    </section>
   );
 };
 
-export default index;
+export default Index;
