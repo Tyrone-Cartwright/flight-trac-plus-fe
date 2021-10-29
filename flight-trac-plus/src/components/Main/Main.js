@@ -19,7 +19,7 @@ const Main = (props) => {
     await fetch(URL, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(flights),
     });
@@ -58,6 +58,7 @@ const Main = (props) => {
               <Show
                 {...rp}
                 flight={flight}
+                createFlight={createFlight}
                 updateFlight={updateFlight}
                 deleteFlight={deleteFlight}
               />

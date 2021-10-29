@@ -24,10 +24,10 @@ const Show = (props) => {
   };
 
   // delete function to remove flight
-  const removeFlight = (evt) => {
-    props.deleteFlight(flights._id);
-    props.history.push('/');
-  };
+  // const removeFlight = (evt) => {
+  //   props.deleteFlight(flights._id);
+  //   props.history.push('/');
+  // };
   return (
     <div>
       <form onSubmit={handleSubmit}>
