@@ -3,7 +3,7 @@ import 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyAMTVuuNUKgo5-ab309wrejRARUr2vJ_10',
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: 'flight-trac-plus.firebaseapp.com',
   projectId: 'flight-trac-plus',
   storageBucket: 'flight-trac-plus.appspot.com',
@@ -12,3 +12,18 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+// set up auth middleware
+const auth = firebase.auth();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
+function signIn() {
+  return auth.signInWithPopup(provider);
+}
+
+function logOut() {
+  return auth.signOut();
+}
+
+export { auth, signIn, logOut };
