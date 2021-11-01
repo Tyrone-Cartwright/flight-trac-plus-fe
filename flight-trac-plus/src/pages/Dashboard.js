@@ -1,7 +1,7 @@
 const Dashboard = (props) => {
   return (
     <main>
-      <h1>Dashboard</h1>
+      <h1>Booked Flight Reservations</h1>
     </main>
   );
 };
