@@ -18,7 +18,6 @@ const CreateForm = ({ createFlight }) => {
   // handleSubmit for new flight form
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(flightForm);
     createFlight(flightForm);
     setFlightForm(getNewFlight());
   };

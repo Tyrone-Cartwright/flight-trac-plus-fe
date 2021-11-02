@@ -7,8 +7,7 @@ import CreateForm from '../../pages/CreateForm';
 const Main = (props) => {
   const [flight, setFlight] = useState('');
 
-  const URL = 'http://localhost:3002/flight/';
-  // const URL = 'https://flight-trac-plus.herokuapp.com/flight/'
+  const URL = 'https://flight-trac-plus.herokuapp.com/flight/';
 
   const getFlight = async () => {
     const response = await fetch(URL);
@@ -41,7 +40,7 @@ const Main = (props) => {
   };
 
   const deleteFlight = async (id) => {
-    await fetch(`${URL}/${id}`, { method: 'DELETE' });
+    await fetch(`${URL}${id}`, { method: 'DELETE' });
     getFlight();
   };
 
