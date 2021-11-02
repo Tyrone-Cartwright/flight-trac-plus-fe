@@ -1,8 +1,8 @@
 const Dashboard = (props) => {
   return (
-    <main>
-      <h1>Booked Flight Reservations</h1>
-    </main>
+    <>
+      <h1>Booked Flights</h1>
+    </>
   );
 };
 

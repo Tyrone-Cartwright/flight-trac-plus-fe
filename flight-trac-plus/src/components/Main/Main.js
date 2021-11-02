@@ -12,11 +12,12 @@ const Main = (props) => {
   const getFlight = async () => {
     const response = await fetch(URL);
     const data = await response.json();
+    // console.log(data);
     setFlight(data);
   };
 
   const createFlight = async (flights) => {
-    await fetch(URL, {
+    await fetch(URL + 'dashboard', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +59,6 @@ const Main = (props) => {
               <Show
                 {...rp}
                 flight={flight}
-                createFlight={createFlight}
                 updateFlight={updateFlight}
                 deleteFlight={deleteFlight}
               />

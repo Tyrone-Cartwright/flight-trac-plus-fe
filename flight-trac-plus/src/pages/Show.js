@@ -29,7 +29,7 @@ const Show = (props) => {
   //   props.history.push('/');
   // };
   return (
-    <div>
+    <div>      
       <form onSubmit={handleSubmit}>
         <input
           type='text'

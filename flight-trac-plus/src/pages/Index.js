@@ -6,6 +6,22 @@ import tripType from '../data/tripType';
 
 const Index = (props) => {
   const [flightForm, setFlightForm] = useState(getNewFlight());
+  console.log(flightForm);
+
+  const loaded = () => {
+    return (
+      <div className='flight'>
+        {/* <Link to={`/flight/${flight._id}`}>
+          <h1>{flight.name}</h1>
+        </Link> */}
+        <h3>{flightForm.departure}</h3>
+      </div>
+    );
+  };
+
+  const loading = () => {
+    return <h1>Loading...</h1>;
+  };
 
   // handleChange for new flight form
   const handleChange = (evt) => {
@@ -99,6 +115,7 @@ const Index = (props) => {
         </select>
         <input type='submit' value='Book Flight' />
       </form>
+      {props.flight ? loaded() : loading()}
     </section>
   );
 };

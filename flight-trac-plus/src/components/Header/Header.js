@@ -1,27 +1,11 @@
 import { Link } from 'react-router-dom';
-import { logOut } from '../../services/firebase';
 
 const Header = (props) => {
   return (
     <nav>
-      <ul>
-        {props.user ? (
-          <>
-            <li>Welcome, {props.user.displayName}</li>
-            <li>
-              <img src={props.user.photoURL} alt={props.user.displayName} />
-            </li>
-            <li onClick={logOut}>Logout</li>
-            <li>
-              <Link to='/dashboard'>Dashboard</Link>
-            </li>
-          </>
-        ) : (
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-        )}
-      </ul>
+      <Link to='/'>
+        <h1>Flight Trac Plus➕</h1>
+      </Link>
     </nav>
   );
 };
