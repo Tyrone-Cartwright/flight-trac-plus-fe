@@ -1,8 +1,5 @@
 // import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import airports from '../data/airports';
-// import flightClass from '../data/flightClass';
-// import tripType from '../data/tripType';
 
 const Index = (props) => {
   const loaded = () => {
@@ -20,7 +17,7 @@ const Index = (props) => {
           </tr>
         </thead>
         <tbody>
-          {airports.map((airport, index) => {
+          {props.flight.map((airport, index) => {
             return (
               <>
                 <tr key={index}>

@@ -30,7 +30,7 @@ const Main = (props) => {
   };
 
   const updateFlight = async (flights, id) => {
-    await fetch(URL + id, {
+    await fetch(`${URL}/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const Main = (props) => {
   };
 
   const deleteFlight = async (id) => {
-    await fetch(URL + id, { method: 'DELETE' });
+    await fetch(`${URL}/${id}`, { method: 'DELETE' });
     getFlight();
   };
 

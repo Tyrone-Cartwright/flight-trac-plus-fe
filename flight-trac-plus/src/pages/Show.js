@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import airports from '../data/airports';
+import flightClass from '../data/flightClass';
+import tripType from '../data/tripType';
 
 const Show = (props) => {
   const id = props.match.params.id;
@@ -6,7 +9,7 @@ const Show = (props) => {
   const flights = flight.find((f) => f._id === id);
 
   // state for form
-  const [editFlightForm, setEditFlightForm] = useState(flight);
+  const [editFlightForm, setEditFlightForm] = useState();
   console.log(editFlightForm);
 
   // handleChange function for flight form
@@ -35,7 +38,7 @@ const Show = (props) => {
         <label htmlFor='departure'>Departing From:</label>
         <select onChange={handleChange} name='departure' id='departure'>
           <option>Departing Airport</option>
-          {editFlightForm.departures.map((departure, index) => (
+          {airports.map((departure, index) => (
             <option key={index} name='departure' value={departure.name}>
               {departure.name}
             </option>
@@ -43,8 +46,8 @@ const Show = (props) => {
         </select>
         <label htmlFor='arrival'>Arriving At:</label>
         <select onChange={handleChange} name='arrival' id='arrival'>
-          <option value=''>Arriving at Airport</option>
-          {editFlightForm.arrivals.map((arrival, index) => (
+          <option>Arriving at Airport</option>
+          {airports.map((arrival, index) => (
             <option key={index} value={arrival.name}>
               {arrival.name}
             </option>
@@ -75,16 +78,16 @@ const Show = (props) => {
           <option value='4'>4</option>
         </select>
         <select onChange={handleChange} name='flightClass' id='flight-class'>
-          <option value={editFlightForm.flightClass}>Class:</option>
-          {editFlightForm.flightClass.map((classTrip, index) => (
+          <option value={flightClass}>Class:</option>
+          {flightClass.map((classTrip, index) => (
             <option key={index} value={classTrip.name}>
               {classTrip.name}
             </option>
           ))}
         </select>
         <select onChange={handleChange} name='tripType' id='traveling'>
-          <option value={editFlightForm.tripType}>Traveling</option>
-          {editFlightForm.tripType.map((trip, index) => (
+          <option value={tripType}>Traveling</option>
+          {tripType.map((trip, index) => (
             <option key={index} value={trip.name}>
               {trip.name}
             </option>
@@ -92,6 +95,9 @@ const Show = (props) => {
         </select>
 
         <input type='submit' value='Update Flight' />
+        <button id='delete' onClick={props.deleteFlight}>
+          DELETE
+        </button>
       </form>
     </div>
   );
