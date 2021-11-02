@@ -6,7 +6,8 @@ const Show = (props) => {
   const flights = flight.find((f) => f._id === id);
 
   // state for form
-  const [editFlightForm, setEditFlightForm] = useState(flights);
+  const [editFlightForm, setEditFlightForm] = useState(flight);
+  console.log(editFlightForm);
 
   // handleChange function for flight form
   const handleChange = (evt) => {
@@ -29,64 +30,67 @@ const Show = (props) => {
   //   props.history.push('/');
   // };
   return (
-    <div>      
+    <div>
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          value={editFlightForm.name}
-          name='departure'
-          placeholder='Departure'
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          value={editFlightForm.arrival}
-          name='arrival'
-          placeholder='Arrival'
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          value={editFlightForm.adults}
-          name='adults'
-          placeholder='Adults'
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          value={editFlightForm.children}
-          name='children'
-          placeholder='Children'
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          value={editFlightForm.infants}
-          name='infants'
-          placeholder='Infants'
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          value={editFlightForm.tripType}
-          name='tripType'
-          placeholder='Trip Type'
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          value={editFlightForm.class}
-          name='class'
-          placeholder='Class'
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          value={editFlightForm.time}
-          name='time'
-          placeholder='Time'
-          onChange={handleChange}
-        />
+        <label htmlFor='departure'>Departing From:</label>
+        <select onChange={handleChange} name='departure' id='departure'>
+          <option>Departing Airport</option>
+          {editFlightForm.departures.map((departure, index) => (
+            <option key={index} name='departure' value={departure.name}>
+              {departure.name}
+            </option>
+          ))}
+        </select>
+        <label htmlFor='arrival'>Arriving At:</label>
+        <select onChange={handleChange} name='arrival' id='arrival'>
+          <option value=''>Arriving at Airport</option>
+          {editFlightForm.arrivals.map((arrival, index) => (
+            <option key={index} value={arrival.name}>
+              {arrival.name}
+            </option>
+          ))}
+        </select>
+        <label htmlFor='adults'>Adults:</label>
+        <select onChange={handleChange} name='adults' id='adults'>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
+        </select>
+        <label htmlFor='children'>Children:</label>
+        <select onChange={handleChange} name='children' id='children'>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
+        </select>
+        <label htmlFor='infants'>Infants:</label>
+        <select onChange={handleChange} name='infants' id='infants'>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
+        </select>
+        <select onChange={handleChange} name='flightClass' id='flight-class'>
+          <option value={editFlightForm.flightClass}>Class:</option>
+          {editFlightForm.flightClass.map((classTrip, index) => (
+            <option key={index} value={classTrip.name}>
+              {classTrip.name}
+            </option>
+          ))}
+        </select>
+        <select onChange={handleChange} name='tripType' id='traveling'>
+          <option value={editFlightForm.tripType}>Traveling</option>
+          {editFlightForm.tripType.map((trip, index) => (
+            <option key={index} value={trip.name}>
+              {trip.name}
+            </option>
+          ))}
+        </select>
+
         <input type='submit' value='Update Flight' />
       </form>
     </div>

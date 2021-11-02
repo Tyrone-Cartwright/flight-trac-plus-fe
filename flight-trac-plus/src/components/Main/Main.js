@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Index from '../../pages/Index';
 import Show from '../../pages/Show';
+import CreateForm from '../../pages/CreateForm';
 
 const Main = (props) => {
   const [flight, setFlight] = useState('');
@@ -51,6 +52,9 @@ const Main = (props) => {
       <Switch>
         <Route exact path='/'>
           <Index flight={flight} createFlight={createFlight} />
+        </Route>
+        <Route path='/dashboard'>
+          <CreateForm createFlight={createFlight} />
         </Route>
         <Route
           path='/flight/:id'
