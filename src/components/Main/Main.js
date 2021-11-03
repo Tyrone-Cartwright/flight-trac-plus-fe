@@ -3,6 +3,10 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Index from '../../pages/Index';
 import Show from '../../pages/Show';
 import CreateForm from '../../pages/CreateForm';
+import Login from '../Login/Login';
+import SignUp from '../SignUp/SignUp';
+import Home from '../../pages/Home';
+import Destinations from '../../pages/Destinations';
 
 const Main = (props) => {
   const [flight, setFlight] = useState('');
@@ -50,10 +54,19 @@ const Main = (props) => {
     <main>
       <Switch>
         <Route exact path='/'>
-          <Index flight={flight} createFlight={createFlight} />
+          <Home />
+          {/* <Index flight={flight} createFlight={createFlight} /> */}
+          <Destinations />
         </Route>
         <Route path='/dashboard'>
           <CreateForm createFlight={createFlight} />
+          <Index flight={flight} createFlight={createFlight} />
+        </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/signup'>
+          <SignUp />
         </Route>
         <Route
           path='/flight/:id'
