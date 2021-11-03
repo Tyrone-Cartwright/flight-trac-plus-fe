@@ -34,65 +34,81 @@ const Show = (props) => {
   // };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='departure'>Departing From:</label>
-        <select onChange={handleChange} name='departure' id='departure'>
-          <option>Departing Airport</option>
-          {airports.map((departure, index) => (
-            <option key={index} name='departure' value={departure.name}>
-              {departure.name}
-            </option>
-          ))}
-        </select>
-        <label htmlFor='arrival'>Arriving At:</label>
-        <select onChange={handleChange} name='arrival' id='arrival'>
-          <option>Arriving at Airport</option>
-          {airports.map((arrival, index) => (
-            <option key={index} value={arrival.name}>
-              {arrival.name}
-            </option>
-          ))}
-        </select>
-        <label htmlFor='adults'>Adults:</label>
-        <select onChange={handleChange} name='adults' id='adults'>
-          <option value='0'>0</option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-        </select>
-        <label htmlFor='children'>Children:</label>
-        <select onChange={handleChange} name='children' id='children'>
-          <option value='0'>0</option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-        </select>
-        <label htmlFor='infants'>Infants:</label>
-        <select onChange={handleChange} name='infants' id='infants'>
-          <option value='0'>0</option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-        </select>
-        <select onChange={handleChange} name='flightClass' id='flight-class'>
-          <option value={flightClass}>Class:</option>
-          {flightClass.map((classTrip, index) => (
-            <option key={index} value={classTrip.name}>
-              {classTrip.name}
-            </option>
-          ))}
-        </select>
-        <select onChange={handleChange} name='tripType' id='traveling'>
-          <option value={tripType}>Traveling</option>
-          {tripType.map((trip, index) => (
-            <option key={index} value={trip.name}>
-              {trip.name}
-            </option>
-          ))}
-        </select>
+      <form className='form-control' onSubmit={handleSubmit}>
+        <div className='input-field col s6'>
+          <label htmlFor='departure'>Departing From:</label>
+          <select onChange={handleChange} name='departure' id='departure'>
+            <option>Departing Airport</option>
+            {airports.map((departure, index) => (
+              <option key={index} name='departure' value={departure.name}>
+                {departure.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className='input-field'>
+          <label htmlFor='arrival'>Arriving At:</label>
+          <select onChange={handleChange} name='arrival' id='arrival'>
+            <option>Arriving at Airport</option>
+            {airports.map((arrival, index) => (
+              <option key={index} value={arrival.name}>
+                {arrival.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className='input-field'>
+          <label htmlFor='adults'>Adults:</label>
+          <select onChange={handleChange} name='adults' id='adults'>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+          </select>
+        </div>
+        <div className='input-field'>
+          <label htmlFor='children'>Children:</label>
+          <select onChange={handleChange} name='children' id='children'>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+          </select>
+        </div>
+        <div className='input-field'>
+          <label htmlFor='infants'>Infants:</label>
+          <select onChange={handleChange} name='infants' id='infants'>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+          </select>
+        </div>
+        <div className='input-field'>
+          <label htmlFor='flightClass'>Flight Class:</label>
+          <select onChange={handleChange} name='flightClass' id='flight-class'>
+            <option value={flightClass.name}>Class:</option>
+            {flightClass.map((classTrip, index) => (
+              <option key={index} value={classTrip.name}>
+                {classTrip.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className='input-field'>
+          <label htmlFor='tripType'>Traveleing:</label>
+          <select onChange={handleChange} name='tripType' id='traveling'>
+            <option value={tripType.name}>Traveling</option>
+            {tripType.map((trip, index) => (
+              <option key={index} value={trip.name}>
+                {trip.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
         <input type='submit' value='Update Flight' />
         <button id='delete' onClick={props.deleteFlight}>
