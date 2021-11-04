@@ -7,6 +7,7 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import Home from '../../pages/Home';
 import Destinations from '../../pages/Destinations';
+import Dashboard from '../../pages/Dashboard';
 
 const Main = (props) => {
   const [flight, setFlight] = useState('');
@@ -59,6 +60,7 @@ const Main = (props) => {
         </Route>
         <Route path='/dashboard'>
           <CreateForm createFlight={createFlight} />
+          <Dashboard />
           <Index flight={flight} createFlight={createFlight} />
         </Route>
         <Route path='/login'>

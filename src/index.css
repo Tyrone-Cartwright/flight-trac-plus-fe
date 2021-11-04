@@ -47,15 +47,15 @@ code {
 }
 
 .home {
-  background-image: url('./assets/wingplane.jpg');
+  /* background-image: url('./assets/wingplane.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
   height: 728px;
   overflow: hidden;
 }
 
-.home .overlay {
+/* .home .overlay {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,11 +63,17 @@ code {
   height: 728px;
   color: hsl(0, 0%, 100%);
   background-color: rgba(0, 0, 0, 0.4);
-}
+  z-index: 10;
+} */
 
 .home .overlay h1 {
   font-size: 36px;
   padding-bottom: 20px;
+  z-index: 10;
+}
+
+.video {
+  z-index: -1;
 }
 
 .destinations {
@@ -97,10 +103,12 @@ code {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  margin: auto;
   height: 728px;
 }
 
-.flight-index .overlay {
+/* .flight-index .overlay {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,19 +116,23 @@ code {
   height: 728px;
   color: hsl(0, 0%, 100%);
   background-color: rgba(0, 0, 0, 0.4);
-}
+} */
 
 .flight-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
-  flex-direction: column;
+  /* flex-direction: column; */
   border: 1px solid hsl(0, 0%, 0%);
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: hsl(0, 0%, 100%);
   color: hsl(0, 1%, 16%);
   padding: 5px;
   margin: 10px;
+  width: 90%;
+  height: 70px;
+  font-size: 1.2rem;
+  margin: 20px auto;
 }
 
 form {
@@ -147,9 +159,10 @@ form option {
 
 form input {
   width: 80px;
-  /* height: 24px; */
+  height: 24px;
   color: hsl(0, 1%, 16%);
-  border: none;
+  /* border: none; */
+  cursor: pointer;
 }
 
 .footer {
