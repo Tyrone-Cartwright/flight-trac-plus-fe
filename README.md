@@ -1,5 +1,32 @@
 # Flight Trac Plus
 
+### Flight Trac Plus Agency is a website where you can book flight reservations, hotel accommodations as well as events and restaurant reservations all in one place.
+
+---
+
+## Technologies used
+
+- ### React Native
+- ### Cascading Style Sheet(CSS)
+
+- ### JavaScript
+
+- ### Express
+
+- ### NodeJS
+
+- ### MONGODB
+
+- ### Mongoose
+
+## Screenshots
+
+### Homepage - Header & Cater Section
+
+## <img src='./src/assets/homepage-header.png'>
+
+## <img src='./src/assets/homepage-cater.png'>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
