@@ -7,7 +7,7 @@ const Index = (props) => {
       <section className='flight-index'>
         <div className='overlay'>
           <table>
-            <thead className='flight'>
+            {/* <thead className='flight'>
               <tr>
                 <th>Departure</th>
                 <th>Arrival</th>
@@ -17,25 +17,50 @@ const Index = (props) => {
                 <th>Trip Type</th>
                 <th>Flight Class</th>
               </tr>
-            </thead>
-            <tbody>
+            </thead> */}
+            <tbody className='flight-show'>
               {props.flight.map((airport, index) => {
                 return (
-                  <>
-                    <tr key={index}>
+                  <div key={index} className='flight-container'>
+                    <tr>
+                      <th>Departure</th>
                       <td>
                         <Link to={`/flight/${airport._id}`}>
                           {airport.departure}
                         </Link>
                       </td>
+                    </tr>
+
+                    <tr>
+                      <th>Arrival</th>
                       <td>{airport.arrival}</td>
+                    </tr>
+
+                    <tr>
+                      <th>Adults</th>
                       <td>{airport.adults}</td>
+                    </tr>
+
+                    <tr>
+                      <th>Children</th>
                       <td>{airport.children}</td>
+                    </tr>
+
+                    <tr>
+                      <th>Infants</th>
                       <td>{airport.infants}</td>
+                    </tr>
+
+                    <tr>
+                      <th>Trip Type</th>
                       <td>{airport.tripType}</td>
+                    </tr>
+
+                    <tr>
+                      <th>Flight Class</th>
                       <td>{airport.flightClass}</td>
                     </tr>
-                  </>
+                  </div>
                 );
               })}
             </tbody>

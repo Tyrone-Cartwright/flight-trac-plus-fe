@@ -16,7 +16,6 @@ const Main = (props) => {
   const getFlight = async () => {
     const response = await fetch(URL);
     const data = await response.json();
-    // console.log(data);
     setFlight(data);
   };
 

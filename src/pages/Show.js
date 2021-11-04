@@ -28,14 +28,14 @@ const Show = (props) => {
   };
 
   // delete function to remove flight
-  // const removeFlight = (evt) => {
-  //   props.deleteFlight(flights._id);
-  //   props.history.push('/');
-  // };
+  const removeFlight = (evt) => {
+    props.deleteFlight(flights._id);
+    props.history.push('/');
+  };
   return (
-    <div>
-      <form className='form-control' onSubmit={handleSubmit}>
-        <div className='input-field col s6'>
+    <div id='overlay'>
+      <form id='form-control' onSubmit={handleSubmit}>
+        <div>
           <label htmlFor='departure'>Departing From:</label>
           <select onChange={handleChange} name='departure' id='departure'>
             <option>Departing Airport</option>
@@ -57,7 +57,7 @@ const Show = (props) => {
             ))}
           </select>
         </div>
-        <div className='input-field'>
+        <div>
           <label htmlFor='adults'>Adults:</label>
           <select onChange={handleChange} name='adults' id='adults'>
             <option value='0'>0</option>
@@ -67,7 +67,7 @@ const Show = (props) => {
             <option value='4'>4</option>
           </select>
         </div>
-        <div className='input-field'>
+        <div>
           <label htmlFor='children'>Children:</label>
           <select onChange={handleChange} name='children' id='children'>
             <option value='0'>0</option>
@@ -77,7 +77,7 @@ const Show = (props) => {
             <option value='4'>4</option>
           </select>
         </div>
-        <div className='input-field'>
+        <div>
           <label htmlFor='infants'>Infants:</label>
           <select onChange={handleChange} name='infants' id='infants'>
             <option value='0'>0</option>
@@ -87,23 +87,23 @@ const Show = (props) => {
             <option value='4'>4</option>
           </select>
         </div>
-        <div className='input-field'>
+        <div>
           <label htmlFor='flightClass'>Flight Class:</label>
           <select onChange={handleChange} name='flightClass' id='flight-class'>
             <option value={flightClass.name}>Class:</option>
             {flightClass.map((classTrip, index) => (
-              <option key={index} value={classTrip.name}>
+              <option key={index} value={classTrip}>
                 {classTrip.name}
               </option>
             ))}
           </select>
         </div>
-        <div className='input-field'>
+        <div>
           <label htmlFor='tripType'>Traveleing:</label>
           <select onChange={handleChange} name='tripType' id='traveling'>
             <option value={tripType.name}>Traveling</option>
             {tripType.map((trip, index) => (
-              <option key={index} value={trip.name}>
+              <option key={index} value={trip}>
                 {trip.name}
               </option>
             ))}
@@ -111,7 +111,7 @@ const Show = (props) => {
         </div>
 
         <input type='submit' value='Update Flight' />
-        <button id='delete' onClick={props.deleteFlight}>
+        <button id='delete' onClick={removeFlight}>
           DELETE
         </button>
       </form>
