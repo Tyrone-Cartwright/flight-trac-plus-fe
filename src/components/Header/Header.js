@@ -13,6 +13,9 @@ const Header = (props) => {
 
       <nav className='navbar'>
         <ul>
+          <Link className='links' to='/'>
+            Home
+          </Link>
           <Link className='links' to='/dashboard'>
             Dashboard
           </Link>

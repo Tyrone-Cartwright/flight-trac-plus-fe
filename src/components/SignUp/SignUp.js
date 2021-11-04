@@ -30,7 +30,7 @@ const SignUp = () => {
               id='password2'
               placeholder='Confirm your password'
             />
-            <input type='submit' />
+            <button type='submit'>Sign Up</button>
           </form>
         </div>
       </section>
