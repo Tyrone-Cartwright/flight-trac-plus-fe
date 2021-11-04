@@ -102,6 +102,11 @@ code {
   border-radius: 10px;
 }
 
+.booked {
+  text-align: center;
+  color: hsl(218, 57%, 31%);
+}
+
 .flight-index {
   background-image: url('./assets/sandy-palm.jpg');
   background-position: center;

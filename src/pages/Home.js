@@ -5,13 +5,7 @@ const Home = () => {
   return (
     <>
       <section className='home'>
-        <video
-          className='video'
-          autoPlay={true}
-          muted={false}
-          loop={true}
-          zIndex='-1'
-        >
+        <video className='video' autoPlay={true} muted={false} loop={true}>
           <source src={travel} />
         </video>
         <div className='overlay'>
